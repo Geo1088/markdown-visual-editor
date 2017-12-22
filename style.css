@@ -12,6 +12,9 @@ body { margin: 0 }
 .bigHeadings .cm-header-5 { font-weight: 400; text-decoration: underline; }
 .bigHeadings .cm-header-6 { font-weight: 400; font-style: italic; }
 
+.CodeMirror-vscrollbar {
+  bottom: 21px !important;
+}
 .pnmm-statusbar {
   position: absolute;
   bottom: 0;
@@ -36,7 +39,7 @@ body { margin: 0 }
   right: 5px;
   border: 1px solid #DDD;
   background: #F7F7F7;
-  z-index: 4;
+  z-index: 6;
   border-bottom: 0;
   padding: 4px 0;
 }
