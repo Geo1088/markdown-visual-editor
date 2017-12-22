@@ -1,0 +1,66 @@
+body { margin: 0 }
+.pnmmEditor {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+  padding-bottom: 21px;
+}
+.pnmmEditor .cm-header-1 { font-size: 2em; }
+.pnmmEditor .cm-header-2 { font-size: 1.5em; }
+.pnmmEditor .cm-header-3 { font-size: 1.33em; }
+.pnmmEditor .cm-header-5 { font-weight: 400; text-decoration: underline; }
+.pnmmEditor .cm-header-6 { font-weight: 400; font-style: italic; }
+
+.pnmm-statusbar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #F7F7F7;
+  height: 21px;
+  left: 0;
+  z-index: 4;
+  box-sizing: border-box;
+  border-top: 1px solid #DDD;
+  display: flex;
+  justify-content: space-between;
+}
+.pnmm-statusbar-left, .pnmm-statusbar-right, .pnmm-statusbar-item {
+  line-height: 20px;
+  margin: 0 5px;
+}
+
+.pnmm-settingspane {
+  position: absolute;
+  bottom: 21px;
+  right: 5px;
+  border: 1px solid #DDD;
+  background: #F7F7F7;
+  z-index: 4;
+  border-bottom: 0;
+  padding: 4px 0;
+}
+.pnmm-setting {
+  margin: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  white-space: pre;
+}
+.pnmm-setting-label:after {
+  content: ':\A0';
+}
+.pnmm-setting-input[type=checkbox] {
+  all: inherit;
+  margin: 0 !important;
+}
+.pnmm-setting-input[type=checkbox]::after {
+  content: 'Off';
+  color: red;
+}
+.pnmm-setting-input[type=checkbox]:checked::after {
+  content: '\A0 On';
+  color: limegreen;
+}
+.pnmm-setting.enabled .pnmm-setting-value {
+  color: green !important;
+}
