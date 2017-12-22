@@ -67,6 +67,47 @@ $settingsPane.append($(`
   })
 ));
 
+/* Status bar: Toggle syntax highlighting */
+$settingsPane.append($(`
+  <div class='pnmm-setting pnmm-highlighting' />
+`).append(`
+  <span class='pnmm-setting-label'>Syntax highlighting</span>
+`).append(
+  $(`
+    <input type=checkbox class='pnmm-setting-input' checked>
+  `).on('change', function () {
+    const $this = $(this);
+    const $setting = $this.closest('.pnmm-setting');
+    if ($this.is(':checked')) {
+      $setting.toggleClass('enabled', true);
+      editor.setOption('mode', 'gfm');
+    } else {
+      $setting.toggleClass('enabled', false);
+      editor.setOption('mode', '');
+    }
+  })
+));
+
+$settingsPane.append($(`
+  <div class='pnmm-setting pnmm-bigtext' />
+`).append(`
+  <span class='pnmm-setting-label'>Big headings</span>
+`).append(
+  $(`
+    <input type=checkbox class='pnmm-setting-input' checked>
+  `).on('change', function () {
+    const $this = $(this);
+    const $setting = $this.closest('.pnmm-setting');
+    if ($this.is(':checked')) {
+      $setting.toggleClass('enabled', true);
+      $(editor.getWrapperElement()).toggleClass('bigHeadings', true);
+    } else {
+      $setting.toggleClass('enabled', false);
+      $(editor.getWrapperElement()).toggleClass('bigHeadings', false);
+    }
+  })
+));
+
 /* Status bar: Show current position */
 const $ruler = $(`<span class='pnmm-statusbar-item pnmm-ruler'>0:0</span>`);
 $statusBarRight.prepend($ruler);
@@ -76,6 +117,9 @@ editor.on('cursorActivity', function () {
 });
 
 /* Add our custom things to the editor */
-$(editor.getWrapperElement()).toggleClass('pnmmEditor').append($statusBar, $settingsPane);
+$(editor.getWrapperElement())
+  .toggleClass('pnmmEditor')
+  .toggleClass('bigHeadings')
+  .append($statusBar, $settingsPane);
 /* Hooray */
 window.pnmmEditor = editor;

@@ -6,11 +6,11 @@ body { margin: 0 }
   font-size: 14px;
   padding-bottom: 21px;
 }
-.pnmmEditor .cm-header-1 { font-size: 2em; }
-.pnmmEditor .cm-header-2 { font-size: 1.5em; }
-.pnmmEditor .cm-header-3 { font-size: 1.33em; }
-.pnmmEditor .cm-header-5 { font-weight: 400; text-decoration: underline; }
-.pnmmEditor .cm-header-6 { font-weight: 400; font-style: italic; }
+.bigHeadings .cm-header-1 { font-size: 2em; }
+.bigHeadings .cm-header-2 { font-size: 1.5em; }
+.bigHeadings .cm-header-3 { font-size: 1.33em; }
+.bigHeadings .cm-header-5 { font-weight: 400; text-decoration: underline; }
+.bigHeadings .cm-header-6 { font-weight: 400; font-style: italic; }
 
 .pnmm-statusbar {
   position: absolute;
