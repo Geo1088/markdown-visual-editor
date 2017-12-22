@@ -108,6 +108,27 @@ $settingsPane.append($(`
   })
 ));
 
+/* Status bar: Toggle line stripes in gutter */
+$settingsPane.append($(`
+  <div class='pnmm-setting pnmm-zebra-gutter' />
+`).append(`
+  <span class='pnmm-setting-label'>Gutter line stripes</span>
+`).append(
+  $(`
+    <input type=checkbox class='pnmm-setting-input'>
+  `).on('change', function () {
+    const $this = $(this);
+    const $setting = $this.closest('.pnmm-setting');
+    if ($this.is(':checked')) {
+      $setting.toggleClass('enabled', true);
+      $(editor.getWrapperElement()).toggleClass('zebraGutter', true);
+    } else {
+      $setting.toggleClass('enabled', false);
+      $(editor.getWrapperElement()).toggleClass('zebraGutter', false);
+    }
+  })
+));
+
 /* Status bar: Show current position */
 const $ruler = $(`<span class='pnmm-statusbar-item pnmm-ruler'>0:0</span>`);
 $statusBarRight.prepend($ruler);

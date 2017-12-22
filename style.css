@@ -25,11 +25,15 @@ body { margin: 0 }
   background: #DDD;
 }
 
-.CodeMirror-code > :nth-child(2n) .CodeMirror-gutter-elt {
-  background: #EEE;
+.CodeMirror-gutter-wrapper,
+.CodeMirror-gutter-elt {
+  height: 100%;
 }
 .CodeMirror-code > :last-child .CodeMirror-gutter-elt {
   border-bottom: 1px solid #DDD;
+}
+.zebraGutter .CodeMirror-code > :nth-child(2n) .CodeMirror-gutter-elt {
+  background: #EEE;
 }
 
 .CodeMirror-vscrollbar {
