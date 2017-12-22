@@ -25,6 +25,13 @@ body { margin: 0 }
   background: #DDD;
 }
 
+.CodeMirror-code > :nth-child(2n) .CodeMirror-gutter-elt {
+  background: #EEE;
+}
+.CodeMirror-code > :last-child .CodeMirror-gutter-elt {
+  border-bottom: 1px solid #DDD;
+}
+
 .CodeMirror-vscrollbar {
   bottom: 21px !important;
 }
