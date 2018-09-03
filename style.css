@@ -5,6 +5,7 @@ body { margin: 0 }
   height: 100vh;
   font-size: 14px;
   padding-bottom: 21px;
+  font-family: "Cousine", "Menlo", "Consolas", monospace
 }
 .bigHeadings .cm-header-1 { font-size: 2em; }
 .bigHeadings .cm-header-2 { font-size: 1.5em; }
